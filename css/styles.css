@@ -219,11 +219,12 @@ button {
   align-items: center;
   gap: 12px;
   color: var(--color-text);
+  flex-shrink: 0;
 }
 
 .brand-logo {
-  width: 52px;
-  height: 52px;
+  width: 48px;
+  height: 48px;
   flex-shrink: 0;
 }
 
@@ -233,35 +234,37 @@ button {
 }
 
 .brand-sub {
-  font-size: var(--text-xs);
+  font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: var(--color-primary);
+  white-space: nowrap;
 }
 
 .brand-title {
   font-family: var(--font-display);
-  font-size: var(--text-lg);
+  font-size: clamp(1.02rem, 1.35vw, 1.25rem);
   font-weight: 800;
   color: var(--color-text);
   line-height: 1.2;
+  white-space: nowrap;
 }
 
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
 }
 
 .nav-link {
   display: inline-flex;
   align-items: center;
-  padding: 10px 13px;
+  padding: 10px 11px;
   min-height: 44px;
   border-radius: var(--radius-sm);
-  font-weight: 600;
-  font-size: var(--text-sm);
+  font-weight: 700;
+  font-size: clamp(0.82rem, 0.95vw, 0.9rem);
   color: var(--color-text);
   transition: background-color var(--transition-fast), color var(--transition-fast);
   white-space: nowrap;
@@ -369,19 +372,20 @@ button {
 .hero-cta-group {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 12px 22px;
+  gap: 6px;
+  padding: 10px 15px;
   min-height: 46px;
   border-radius: var(--radius-pill);
   font-weight: 700;
-  font-size: var(--text-sm);
+  font-size: 0.86rem;
+  white-space: nowrap;
   transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
 }
 
@@ -499,6 +503,11 @@ button {
    ========================================================================== */
 .section {
   padding: 56px 0;
+  scroll-margin-top: 90px;
+}
+
+#tai-nguyen {
+  scroll-margin-top: 90px;
 }
 
 .section-alt {
@@ -788,6 +797,8 @@ button {
   min-height: 44px;
   background-color: var(--color-primary-soft);
   border-radius: var(--radius-pill);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .btn-read-more:hover {
@@ -1624,36 +1635,53 @@ button {
     grid-template-columns: 1fr;
   }
 
-  /* Bảng văn bản tự động chuyển sang dạng thẻ trên di động (Không vỡ bảng) */
-  .doc-table thead {
+  /* Bảng văn bản và Bảng tổng hợp tuần tự động chuyển sang dạng thẻ trên di động (Không vỡ bảng) */
+  .doc-table thead,
+  .full-week-table thead {
     display: none;
   }
 
   .doc-table,
   .doc-table tbody,
   .doc-table tr,
-  .doc-table td {
+  .doc-table td,
+  .full-week-table,
+  .full-week-table tbody,
+  .full-week-table tr,
+  .full-week-table td {
     display: block;
     width: 100%;
   }
 
-  .doc-table tr {
+  .doc-table tr,
+  .full-week-table tr {
     padding: 14px;
     border-bottom: 2px solid var(--color-border);
   }
 
-  .doc-table td {
+  .doc-table td,
+  .full-week-table td {
     padding: 6px 0;
     border: none;
   }
 
-  .doc-table td::before {
+  .doc-table td::before,
+  .full-week-table td::before {
     content: attr(data-label);
     display: block;
     font-size: 0.72rem;
     font-weight: 800;
     text-transform: uppercase;
-    color: var(--color-text-muted);
+    color: var(--color-primary);
+    margin-bottom: 2px;
+  }
+
+  .form-two-col {
+    grid-template-columns: 1fr !important;
+  }
+
+  .kbd-hint {
+    display: none;
   }
 }
 

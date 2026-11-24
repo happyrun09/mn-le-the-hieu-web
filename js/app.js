@@ -1019,11 +1019,11 @@
         .map(
           (d) => `
           <tr>
-            <td><strong>${Utils.escapeHTML(d.dayName)}</strong><br/><span style="font-size:0.78rem; color:var(--color-text-muted);">${Utils.escapeHTML(d.theme)}</span></td>
-            <td>${Utils.escapeHTML(d.meals.morning.dish)}</td>
-            <td><strong>${Utils.escapeHTML(d.meals.lunch.dish)}</strong></td>
-            <td>${Utils.escapeHTML(d.meals.afternoon.dish)}</td>
-            <td>
+            <td data-label="Thứ / Chủ đề"><strong>${Utils.escapeHTML(d.dayName)}</strong><br/><span style="font-size:0.78rem; color:var(--color-text-muted);">${Utils.escapeHTML(d.theme)}</span></td>
+            <td data-label="Bữa phụ sáng">${Utils.escapeHTML(d.meals.morning.dish)}</td>
+            <td data-label="Bữa chính trưa bán trú"><strong>${Utils.escapeHTML(d.meals.lunch.dish)}</strong></td>
+            <td data-label="Bữa phụ chiều">${Utils.escapeHTML(d.meals.afternoon.dish)}</td>
+            <td data-label="Kế hoạch hoạt động">
               <strong>Sáng:</strong> ${Utils.escapeHTML(d.schedule.morningActivity)}<br/>
               <strong>Chiều:</strong> ${Utils.escapeHTML(d.schedule.afternoonActivity)}
             </td>
